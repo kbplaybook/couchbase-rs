@@ -1029,7 +1029,9 @@ fn gen_lcb_io_error() -> std::io::Error {
 }
 
 const LOG_MSG_LENGTH: usize = 1024;
-
+#[cfg(not(target_os = "windows"))]
+pub(crate) type VaList = *mut __va_list_tag;
+#[cfg(target_os = "windows")]
 // Windows disagrees with Linux and Macos on which type is available.
 pub(crate) type VaList = va_list;
 
