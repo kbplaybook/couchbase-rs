@@ -648,27 +648,27 @@ impl AzureBlobExternalAnalyticsLinkBuilder {
     }
 
     pub fn connection_string(mut self, connection_string: impl Into<String>) -> Self {
-        self.connection_string = Some(connection_string);
+        self.connection_string = Some(connection_string.into());
         self
     }
     pub fn account_name(mut self, account_name: impl Into<String>) -> Self {
-        self.account_name = Some(account_name);
+        self.account_name = Some(account_name.into());
         self
     }
     pub fn account_key(mut self, account_key: impl Into<String>) -> Self {
-        self.account_key = Some(account_key);
+        self.account_key = Some(account_key.into());
         self
     }
     pub fn shared_access_signature(mut self, signature: impl Into<String>) -> Self {
-        self.shared_access_signature = Some(signature);
+        self.shared_access_signature = Some(signature.into());
         self
     }
     pub fn blob_endpoint(mut self, blob_endpoint: impl Into<String>) -> Self {
-        self.blob_endpoint = Some(blob_endpoint);
+        self.blob_endpoint = Some(blob_endpoint.into());
         self
     }
     pub fn endpoint_suffix(mut self, endpoint_suffix: impl Into<String>) -> Self {
-        self.endpoint_suffix = Some(endpoint_suffix);
+        self.endpoint_suffix = Some(endpoint_suffix.into());
         self
     }
     pub fn build(self) -> AzureBlobExternalAnalyticsLink {
